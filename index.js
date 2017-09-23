@@ -1,5 +1,5 @@
 var express = require('express');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
 var app = express();
 
 console.log("Added Body Parsers");
@@ -18,8 +18,8 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.post('/mypostback', function(request, response) {
-   console.log(request.body);
-   response.send(request.body)
+   console.log(JSON.stringify(request.body));
+   response.send(JSON.stringify(request.body))
 });
 
 app.get('/', function(request, response) {
